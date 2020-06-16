@@ -1,0 +1,42 @@
+module.exports = {
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `EB Garamond`,
+          `Source Sans Pro` 
+        ],
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Cambridge University Fencing Club`,
+        short_name: `CUFC`,
+        start_url: `/`,
+        background_color: `#2b2a2a`,
+        theme_color: `#a3c1ad`,
+        display: `standalone`,
+        icon: `${__dirname}/src/images/logo.png`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
+    },
+  ]
+}
