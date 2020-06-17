@@ -8,7 +8,7 @@ import { colors, fonts, breaks } from "../style"
 const LogoContainer = styled.div`
   z-index: 2;
   width: 36px;
-  margin: 10px auto 10px 10px`;
+  margin: 10px`;
 
 const Logo = () => {
   const data = useStaticQuery(graphql`
@@ -33,6 +33,7 @@ const NavbarContainer = styled.nav`
  position: fixed;
  display: flex;
  align-items: center;
+ justify-content: space-between;
  width: 100%;
  transition: 1.0s;
  background-color: ${props => props.transparentNav ? '#fff0' : colors.backgroundSecondary};
@@ -43,37 +44,36 @@ const NavLink = styled(Link)`
   font-family: ${fonts.serif};
   color: ${colors.primary};
   font-size: large;
-  margin: 5px 10px;
-  border: 1px solid ${colors.primary};
-  transition: 1.0s;
-  border-radius: 5px;
+  margin: 10px;
   padding: 5px 10px;
+  border: 1px solid ${colors.primary};
+  border-radius: 5px;
+  text-align: center;
+  transition: 1.0s;
   :hover {
     background-color: ${colors.primary};
     color: ${colors.background};
   }`;
 
 const NavList = styled.div`
-  margin: 0;
+  margin: -10px 10px;
   @media (max-width: ${breaks.small}) {
     display: none;
   }`;
 
 const SideNav = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: ${props => props.navbarOpen ? '100%' : '0'};
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: ${colors.backgroundSecondary};
-  opacity: 0.8;
-  box-shadow: 0 0 10px 2px #111;
+  background-color: ${colors.backgroundSecondary+'cc'};
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 70px;
-  display: flex;
-  flex-direction: column;
   @media (min-width: ${breaks.small}) {
     display: none;
   }`;
@@ -107,7 +107,7 @@ export default class Navbar extends React.Component {
   }
 
   handleScroll = event => {
-    if (window.scrollY == 0 && this.state['atTop']) {
+    if (window.scrollY == 0 && !this.state['atTop']) {
       this.setState({ atTop: true });
     }
     else if (window.scrollY != 0 && this.state['atTop']) {

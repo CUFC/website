@@ -28,7 +28,7 @@ const OuterContainer = styled.div`
 
 const MainContent = styled.main`
   width: 100%;
-  flex: 1 1 auto;`;
+  flex: auto;`;
 
 export default function Layout({ children }) {
   return (

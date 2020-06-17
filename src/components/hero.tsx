@@ -6,30 +6,62 @@ import styled from "styled-components"
 import { colors, fonts } from "../style"
 
 const HeroImage = styled(BackgroundImage)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: #040e18;
   height: 100vh`
 
 const LogoContainer = styled.div`
   display: block;
-  margin: 0 auto;
   width: 90px;`
 
 const TitleText = styled.p`
-  text-align: center;
   font-size: xx-large;
+  text-align: center;
+  margin: 10px 0;
   color: ${colors.primary};
   font-family: ${fonts.serif};
   text-shadow: 0 0 0.2em black;`
 
 const SubtitleText = styled.p`
+  font-size: large;
   text-align: center;
-  font-size: x-large;
+  margin: 0;
   color: ${colors.primary};
   font-family: ${fonts.serif};
   text-shadow: 0 0 0.2em black`
 
 const OverlayContainer = styled.div`
-  padding: 30vh 1em;`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;`
+
+const DownArrow = () => {
+  return (
+    <svg css={`width: 50px; height: 50px;`}><rect fill="none" height="50" width="50"/><polygon fill={colors.primary} points="47.25,15 45.164,12.914 25,33.078 4.836,12.914 2.75,15 25,37.25 "/></svg>
+  )
+}
+
+const DownArrowContainer = styled.div`
+  width: 50px;
+  height: 50px;
+  animation: bounce 2s infinite;
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }`
 
 export default function Hero() {
   const data = useStaticQuery(graphql`
@@ -55,6 +87,7 @@ export default function Hero() {
 
   return (
     <HeroImage Tag='section' fluid={background}>
+      <div></div>
       <OverlayContainer>
         <LogoContainer><Img fixed={logo} /></LogoContainer>
         <TitleText>
@@ -62,6 +95,9 @@ export default function Hero() {
         </TitleText>
         <SubtitleText>Est. 1896</SubtitleText>
       </OverlayContainer>
+      <DownArrowContainer>
+        <DownArrow />
+      </DownArrowContainer>
     </HeroImage>
   )
 }
