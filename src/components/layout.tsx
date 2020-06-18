@@ -6,6 +6,9 @@ import { createGlobalStyle } from 'styled-components'
 import { fonts, colors } from '../style'
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     padding: 0;
     margin: 0;

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -34,6 +34,7 @@ const NavbarContainer = styled.nav`
  display: flex;
  align-items: center;
  justify-content: space-between;
+ height: 70px;
  width: 100%;
  transition: 1.0s;
  background-color: ${props => props.transparentNav ? '#fff0' : colors.backgroundSecondary};
@@ -70,7 +71,8 @@ const SideNav = styled.div`
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: ${colors.backgroundSecondary+'cc'};
+  background-color: ${colors.backgroundSecondary};
+  opacity: ${props => props.navbarOpen ? 1 : 0};
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 70px;
@@ -95,40 +97,34 @@ const MobileHamburger = styled(Hamburger)`
     display: none;
   }`;
 
-export default class Navbar extends React.Component {
-  state = { atTop: true, sidenavOpen: false}
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
+export default function Navbar () {
+  const [atTop, setAtTop] = useState(true);
+  const [sidenavOpen, setSidenavOpen] = useState(false);
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = event => {
-    if (window.scrollY == 0 && !this.state['atTop']) {
-      this.setState({ atTop: true });
+  const handleScroll = event => {
+    if (window.scrollY == 0 && !atTop) {
+      setAtTop(true);
     }
-    else if (window.scrollY != 0 && this.state['atTop']) {
-      this.setState({ atTop: false });
+    else if (window.scrollY != 0 && atTop) {
+      setAtTop(false);
     }
   };
 
-  handleSidenav = () => {
-    this.setState({ sidenavOpen: !this.state['sidenavOpen'] })
-  }
+  const handleSidenav = () => {
+    setSidenavOpen(!sidenavOpen)
+  };
 
-  render() {
-    return (
-      <NavbarContainer transparentNav={this.state['atTop']}>
-        <Logo />
-        <NavList><NavLinks transparentNav={this.state['atTop']} sideNav={false} /></NavList>
-        <MobileHamburger onClick={this.handleSidenav} open={this.state['sidenavOpen']} />
-        <SideNav navbarOpen={this.state['sidenavOpen']}>
-          <NavLinks transparentNav={false} sideNav={true} />
-        </SideNav>
-      </NavbarContainer>
-    );
-}
+  useEffect(() => window.addEventListener('scroll', handleScroll));
+
+  return (
+    <NavbarContainer transparentNav={atTop}>
+      <Logo />
+      <NavList><NavLinks transparentNav={atTop} sideNav={false} /></NavList>
+      <MobileHamburger onClick={handleSidenav} open={sidenavOpen} />
+      <SideNav navbarOpen={sidenavOpen}>
+        <NavLinks transparentNav={false} sideNav={true} />
+      </SideNav>
+    </NavbarContainer>
+  );
 }

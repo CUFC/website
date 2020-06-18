@@ -1,17 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import styled from "styled-components"
 import { colors, fonts } from "../style"
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
-const HeroImage = styled(BackgroundImage)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #040e18;
-  height: 100vh`
+const HeroImage = (props) => {
+  const [height, setHeight] = useState(0);
+  useEffect(() => {
+    setHeight(window.innerHeight);
+  }, [window.innerHeight]);
+
+  const HeightlessHero = styled(BackgroundImage)`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #040e18;
+    height: ${props => props.realHeight}px;`
+
+  return <HeightlessHero {...props} realHeight={height}/>;
+}
 
 const LogoContainer = styled.div`
   display: block;
@@ -46,11 +56,14 @@ const DownArrow = () => {
   )
 }
 
-const DownArrowContainer = styled.div`
+const DownArrowContainer = styled.button`
   width: 50px;
   height: 50px;
-  animation: bounce 2s infinite;
+  padding: 0;
+  border: none;
+  background: none;
 
+  animation: bounce 2s infinite;
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
       transform: translateY(0);
@@ -87,7 +100,7 @@ export default function Hero() {
 
   return (
     <HeroImage Tag='section' fluid={background}>
-      <div></div>
+      <div></div> {/* For spacing reasons to centre the logo and text */}
       <OverlayContainer>
         <LogoContainer><Img fixed={logo} /></LogoContainer>
         <TitleText>
@@ -95,10 +108,9 @@ export default function Hero() {
         </TitleText>
         <SubtitleText>Est. 1896</SubtitleText>
       </OverlayContainer>
-      <DownArrowContainer>
+      <DownArrowContainer onClick={() => {scrollTo('#content')}}>
         <DownArrow />
       </DownArrowContainer>
     </HeroImage>
   )
 }
-

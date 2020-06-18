@@ -1,15 +1,15 @@
 import React from "react"
-import { Link, PageProps, graphql, withPrefix } from "gatsby"
+import { graphql } from "gatsby"
 import Hero from "../components/hero"
 import Layout from "../components/layout"
-import Heading from "../components/Heading"
-import Container from "../components/Container"
+import Heading from "../components/heading"
+import Container from "../components/container"
 
-export default function Home({ data }) {
+export default function Index({ data }) {
   return (
     <Layout>
       <Hero />
-      <Container>
+      <Container id="content">
         <Heading>President's welcome</Heading>
           <div>
             {data.allTextYaml.edges[0].node.welcome.map((element: any) => {

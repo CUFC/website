@@ -38,5 +38,6 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    `gatsby-plugin-smoothscroll`
   ]
 }

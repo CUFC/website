@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Heading from "../components/Heading"
+import Heading from "../components/heading"
 import Page from "../components/page"
 
 export default function Documents({ data }) {
