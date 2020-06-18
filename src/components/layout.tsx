@@ -16,10 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-  }
-  ul {
-    margin: 0 auto;
-    list-style-type: none;
+    color: ${colors.primary};
   }`;
 
 const OuterContainer = styled.div`

@@ -58,7 +58,7 @@ const NavLink = styled(Link)`
 
 const NavList = styled.div`
   margin: -10px 10px;
-  @media (max-width: ${breaks.small}) {
+  @media (max-width: ${breaks.medium}) {
     display: none;
   }`;
 
@@ -76,7 +76,7 @@ const SideNav = styled.div`
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 70px;
-  @media (min-width: ${breaks.small}) {
+  @media (min-width: ${breaks.medium}) {
     display: none;
   }`;
 
@@ -84,8 +84,10 @@ const NavLinks = ({ transparentNav, sideNav }) => {
   return (
     <>
       <NavLink to='/' transparentNav={transparentNav} sideNav={sideNav}>Home</NavLink>
-      <NavLink to='/documents' transparentNav={transparentNav} sideNav={sideNav}>Documents</NavLink>
+      <NavLink to='/information' transparentNav={transparentNav} sideNav={sideNav}>Information</NavLink>
       <NavLink to='/committee' transparentNav={transparentNav} sideNav={sideNav}>Committee</NavLink>
+      <NavLink to='/alumni' transparentNav={transparentNav} sideNav={sideNav}>Alumni</NavLink>
+      <NavLink to='/documents' transparentNav={transparentNav} sideNav={sideNav}>Documents</NavLink>
     </>
   )
 };
@@ -93,7 +95,7 @@ const NavLinks = ({ transparentNav, sideNav }) => {
 const MobileHamburger = styled(Hamburger)`
   margin: 10px;
   z-index: 2;
-  @media (min-width: ${breaks.small}) {
+  @media (min-width: ${breaks.medium}) {
     display: none;
   }`;
 
@@ -102,20 +104,22 @@ export default function Navbar () {
   const [atTop, setAtTop] = useState(true);
   const [sidenavOpen, setSidenavOpen] = useState(false);
 
-  const handleScroll = event => {
-    if (window.scrollY == 0 && !atTop) {
-      setAtTop(true);
-    }
-    else if (window.scrollY != 0 && atTop) {
-      setAtTop(false);
-    }
-  };
-
   const handleSidenav = () => {
     setSidenavOpen(!sidenavOpen)
   };
 
-  useEffect(() => window.addEventListener('scroll', handleScroll));
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      window.addEventListener('scroll', event => {
+        if (window.scrollY == 0 && !atTop) {
+          setAtTop(true);
+        }
+        else if (window.scrollY != 0 && atTop) {
+          setAtTop(false);
+        }
+      });
+    }
+  });
 
   return (
     <NavbarContainer transparentNav={atTop}>

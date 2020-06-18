@@ -1,16 +1,19 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Heading from "../components/heading"
 import Page from "../components/page"
 
 export default function Documents({ data }) {
   return (
     <Page>
-      <Heading>Documents to go here</Heading>
+      <Heading>Club Documents</Heading>
+      <p>Below are all the offical club documents. Feel free to peruse at will.</p>
+      <ul>
       {data.allFile.edges.map(element =>
-        <a href={element.node.publicURL}>{element.node.name}</a>)}
+        <li><a href={element.node.publicURL} css={`text-decoration: underline;`}>{element.node.name}</a></li>)}
+      </ul>
     </Page>
-  )
+  );
 }
 
 export const query = graphql`

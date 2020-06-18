@@ -5,7 +5,7 @@ import Layout from "./layout"
 import Container from "./container"
 
 const NavSkipContainer = styled(Container)`
-  margin-top: 70px;`
+  margin-top: 0px;`
 
 export default function Page({ children }) {
   return (

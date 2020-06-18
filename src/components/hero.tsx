@@ -7,10 +7,13 @@ import { colors, fonts } from "../style"
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const HeroImage = (props) => {
-  const [height, setHeight] = useState(0);
-  useEffect(() => {
-    setHeight(window.innerHeight);
-  }, [window.innerHeight]);
+  const [height, setHeight] = useState('100vh');
+
+  if (typeof window !== `undefined`) {
+    useEffect(() => {
+      setHeight(window.innerHeight+'px');
+    }, [window.innerHeight]);
+  }
 
   const HeightlessHero = styled(BackgroundImage)`
     display: flex;
@@ -18,7 +21,7 @@ const HeroImage = (props) => {
     justify-content: space-between;
     align-items: center;
     background-color: #040e18;
-    height: ${props => props.realHeight}px;`
+    height: ${props => props.realHeight};`
 
   return <HeightlessHero {...props} realHeight={height}/>;
 }
