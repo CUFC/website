@@ -30,8 +30,12 @@ export default function Information({ data }) {
       </FlexRow>
       <h2>Training Location</h2>
       <FlexRow>
-        <RowItem bases={[100, 100, 50, 50]}>Some info to go here about the training location and that it may change etc. Needs to list the address and room and that if differs depending on the day.</RowItem>
+        <RowItem bases={[100, 100, 50, 50]}>Some info to go here about the training location and that it may change etc.</RowItem>
         <RowItem bases={[100, 100, 50, 50]}><LocationMap src={"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3__ZYUh32EcRort1wB8MPbc&key="+data.mapEmbedKey.nodes[0].mapEmbedKey}></LocationMap></RowItem>
+      </FlexRow>
+      <h2>Events</h2>
+      <FlexRow>
+        <RowItem bases={[100, 100, 50, 50]}>Varsity is a thing that exists etc...</RowItem>
       </FlexRow>
     </Page>
   )
