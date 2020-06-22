@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Navbar from "./navbar"
-import Footer from "./footer"
+import Navbar from "../specialised/Navbar"
+import Footer from "../specialised/Footer"
 import { createGlobalStyle } from 'styled-components'
-import { fonts, colors } from '../style'
+import { fonts, colors } from '../../style'
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: ${fonts.sans};
+    font-family: ${fonts.serif};
   }
   a {
     text-decoration: none;
@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 const OuterContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-content: center;
   min-height: 100vh;
   background-color: ${colors.background};
   color: ${colors.text};`;

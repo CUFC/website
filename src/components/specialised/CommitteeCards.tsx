@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { breaks, colors, fonts } from "../style"
+import { breaks, colors, fonts } from "../../style"
+import Card from "../reuseable/Card";
+import FlexRow from "../reuseable/FlexRow";
+import RowItem from "../reuseable/RowItem";
 
 const Envelope = () => {
   return (
@@ -10,41 +13,21 @@ const Envelope = () => {
   );
 }
 
-const CardContainer = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  flex: 0 1 80%;
-  align-items: center;
-  justify-content: space-around;
-  @media (min-width: ${breaks.small}) {
-    flex: 0 1 40%;
-  }
-  @media (min-width: ${breaks.medium}) {
-    flex: 0 1 25%;
-  }
-  
-  margin: 10px;
-  border-radius: 5px;
-  background-color: ${colors.backgroundSecondary};
-  transition: 0.3s;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  :hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }`
-
 const CommitteeCard = ({ name, role, email }) => {
   return (
-    <CardContainer>
-      <p css={`text-align: center; font-family: ${fonts.serif}; font-size: x-large; margin: 10px;`}>{role}</p>
-      <p css={`text-align: center; margin: 10px;`}>{name}</p>
-      <a href={'mailto:' + email} css={`width: 20px; margin: 10px;`}><Envelope /></a>
-    </CardContainer>
+    <RowItem bases={[100, 50, 33, 33]}>
+      <Card width={"100%"} height={"100%"}>
+        <p css={`text-align: center; font-family: ${fonts.serif}; font-size: x-large; margin: 10px;`}>{role}</p>
+        <p css={`text-align: center; margin: 10px;`}>{name}</p>
+        <a href={'mailto:' + email} css={`width: 20px; margin: 10px;`}><Envelope /></a>
+      </Card>
+    </RowItem>
   )
 }
 
-const CardsContainer = styled.div`
-  display: flex;
-  flex-flow: row wrap;
+const CardsContainer = styled(FlexRow)`
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;`
 
 const CommitteeCards = ({ data }) => {

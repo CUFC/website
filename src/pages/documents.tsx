@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Heading from "../components/heading"
-import Page from "../components/page"
+import Heading from "../components/specialised/Heading"
+import Page from "../components/specialised/Page"
 
 export default function Documents({ data }) {
   return (
-    <Page>
+    <Page image={data.image.childImageSharp.fluid}>
       <Heading>Club Documents</Heading>
       <p>Below are all the offical club documents. Feel free to peruse at will.</p>
       <ul>
-      {data.allFile.edges.map(element =>
+      {data.files.edges.map(element =>
         <li><a href={element.node.publicURL} css={`text-decoration: underline;`}>{element.node.name}</a></li>)}
       </ul>
     </Page>
@@ -17,14 +17,20 @@ export default function Documents({ data }) {
 }
 
 export const query = graphql`
-query {
-  allFile(filter: { extension: { eq: "pdf" } }) {
-    edges {
-      node {
-        name
-        publicURL
+  query {
+    image: file(relativePath: { eq: "varsity_2020.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
       }
     }
-  }
-}
-`
+    files: allFile(filter: { extension: { eq: "pdf" } }) {
+      edges {
+        node {
+          name
+          publicURL
+        }
+      }
+    }
+  }`

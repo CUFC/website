@@ -1,11 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../style"
-
-const BarContainer = styled.button`
-  background-color: #FFF0;
-  border: 1px solid ${colors.primary};
-  border-radius: 10px;`
+import { colors } from "../../style"
+import Button from "../reuseable/Button"
 
 const Bar = styled.div`
   width: 20px;
@@ -13,7 +9,10 @@ const Bar = styled.div`
   background-color: ${colors.primary};
   margin: 6px 0;
   transition: 0.4s;
-  border-radius: 4px;`
+  border-radius: 4px;
+  ${Button}:hover & {
+    background-color: ${colors.background};
+  }`;
 
 const TopBar = styled(Bar)`
   ${props => props.open && 'transform: rotate(-45deg) translate(-5px, 5px);'};`
@@ -26,11 +25,11 @@ const BottomBar = styled(Bar)`
 
 const Hamburger = ( { onClick, open, className } ) => {
   return (
-    <BarContainer onClick={onClick} className={className}>
+    <Button onClick={onClick} className={className}>
       <TopBar open={open}/>
       <MiddleBar open={open}/>
       <BottomBar open={open}/>
-    </BarContainer>
+    </Button>
   )
 }
 

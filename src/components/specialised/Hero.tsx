@@ -3,8 +3,17 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import styled from "styled-components"
-import { colors, fonts } from "../style"
+import { colors, fonts } from "../../style"
 import scrollTo from 'gatsby-plugin-smoothscroll';
+
+const HeightlessHero = styled(BackgroundImage)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #040e18;
+  height: ${props => props.realHeight};`
 
 const HeroImage = (props) => {
   const [height, setHeight] = useState('100vh');
@@ -15,15 +24,7 @@ const HeroImage = (props) => {
     }, [window.innerHeight]);
   }
 
-  const HeightlessHero = styled(BackgroundImage)`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #040e18;
-    height: ${props => props.realHeight};`
-
-  return <HeightlessHero {...props} realHeight={height}/>;
+  return <HeightlessHero {...props} realHeight={height} />;
 }
 
 const LogoContainer = styled.div`

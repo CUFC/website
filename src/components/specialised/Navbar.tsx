@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Hamburger from "./hamburger"
-import { colors, fonts, breaks } from "../style"
+import Hamburger from "./Hamburger"
+import { colors, breaks } from "../../style"
+import Button from "../reuseable/Button"
 
 const LogoContainer = styled.div`
   z-index: 2;
@@ -23,7 +24,7 @@ const Logo = () => {
     }
   `);
   return (
-    <LogoContainer>
+    <LogoContainer as={Link} to="/">
       <Img fluid={data.file.childImageSharp.fluid} alt="logo" />
     </LogoContainer>
   );
@@ -41,20 +42,7 @@ const NavbarContainer = styled.nav`
  ${props => !props.transparentNav && 'box-shadow: 0 0 10px 2px #111;'};
  z-index: 1;`;
 
-const NavLink = styled(Link)`
-  font-family: ${fonts.serif};
-  color: ${colors.primary};
-  font-size: large;
-  margin: 10px;
-  padding: 5px 10px;
-  border: 1px solid ${colors.primary};
-  border-radius: 5px;
-  text-align: center;
-  transition: 1.0s;
-  :hover {
-    background-color: ${colors.primary};
-    color: ${colors.background};
-  }`;
+const NavLink = (props) => <Button {...props} as={Link}></Button>
 
 const NavList = styled.div`
   margin: -10px 10px;
@@ -83,7 +71,6 @@ const SideNav = styled.div`
 const NavLinks = ({ transparentNav, sideNav }) => {
   return (
     <>
-      <NavLink to='/' transparentNav={transparentNav} sideNav={sideNav}>Home</NavLink>
       <NavLink to='/information' transparentNav={transparentNav} sideNav={sideNav}>Information</NavLink>
       <NavLink to='/committee' transparentNav={transparentNav} sideNav={sideNav}>Committee</NavLink>
       <NavLink to='/alumni' transparentNav={transparentNav} sideNav={sideNav}>Alumni</NavLink>

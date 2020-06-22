@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../style"
+import { colors } from "../../style"
 
 const FooterContainer = styled.footer`
   width: 100%;
