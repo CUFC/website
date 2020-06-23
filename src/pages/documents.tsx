@@ -1,12 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Heading from "../components/specialised/Heading"
 import Page from "../components/specialised/Page"
 
 export default function Documents({ data }) {
   return (
     <Page image={data.image.childImageSharp.fluid}>
-      <Heading>Club Documents</Heading>
+      <h1>Club Documents</h1>
       <p>Below are all the offical club documents. Feel free to peruse at will.</p>
       <ul>
       {data.files.edges.map(element =>

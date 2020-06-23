@@ -8,7 +8,6 @@ export const colors = {
   backgroundSecondary: '#2b2a2a'
 }
 
-// TODO: add monospace font
 export const fonts = {
   serif: '"EB Garamond", serif',
   sans: '"Source Sans Pro", sans-serif',

@@ -1,14 +1,13 @@
 import React from "react"
-import Heading from "../components/specialised/Heading"
 import Page from "../components/specialised/Page"
 import { graphql } from "gatsby"
 
 export default function Alumni({ data }) {
   return (
     <Page image={data.file.childImageSharp.fluid}>
-      <Heading>
+      <h1>
         Information for Alumni
-      </Heading>
+      </h1>
       <p>look, some info here!</p>
     </Page>
   )

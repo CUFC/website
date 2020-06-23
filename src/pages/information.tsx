@@ -1,5 +1,4 @@
 import React from "react"
-import Heading from "../components/specialised/Heading"
 import Page from "../components/specialised/Page"
 import { graphql } from "gatsby"
 import styled from "styled-components"
@@ -15,9 +14,9 @@ const LocationMap = styled.iframe`
 export default function Information({ data }) {
   return (
     <Page image={data.headerImage.childImageSharp.fluid}>
-      <Heading>
+      <h1>
         Club Information
-      </Heading>
+      </h1>
       <p>Hopefully any information you may need to find out about the club is listed below. If not, then feel free to contact any of the committee members to get more details.</p>
       <h2>Joining</h2>
       <FlexRow>

@@ -1,5 +1,4 @@
 import React from "react"
-import Heading from "../components/specialised/Heading"
 import Page from "../components/specialised/Page"
 import CommitteeCards from "../components/specialised/CommitteeCards"
 import { graphql } from "gatsby"
@@ -7,9 +6,9 @@ import { graphql } from "gatsby"
 export default function Committee({ data }) {
   return (
     <Page image={data.image.childImageSharp.fluid}>
-      <Heading>
+      <h1>
         The Committee
-      </Heading>
+      </h1>
       <p>If you have queries regarding any aspect of the club then feel free to contact any of the committee members listed below:</p>
       <CommitteeCards data={data.members.edges[0].node.committee}/>
     </Page>
