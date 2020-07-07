@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.serif};
   }
   a {
-    text-decoration: none;
     color: ${colors.primary};
   }`;
 

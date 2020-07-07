@@ -17,7 +17,7 @@ export default function Committee({ data }) {
 
 export const query = graphql`
   query {
-    image: file(relativePath: { eq: "varsity_2020.jpg" }) {
+    image: file(relativePath: { eq: "arran_fleche.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG

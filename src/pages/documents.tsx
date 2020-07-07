@@ -17,7 +17,7 @@ export default function Documents({ data }) {
 
 export const query = graphql`
   query {
-    image: file(relativePath: { eq: "varsity_2020.jpg" }) {
+    image: file(relativePath: { eq: "varsity_2017.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG

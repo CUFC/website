@@ -11,7 +11,6 @@ const HeaderImage = styled(Img)`
   height: 20vh;
   margin: 0 auto;
   width: 900px;
-  border-style: solid;
   @media(max-width: 900px) {
     border-style: none;
     width: 100vw;

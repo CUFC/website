@@ -73,7 +73,7 @@ const NavLinks = ({ transparentNav, sideNav }) => {
     <>
       <NavLink to='/information' transparentNav={transparentNav} sideNav={sideNav}>Information</NavLink>
       <NavLink to='/committee' transparentNav={transparentNav} sideNav={sideNav}>Committee</NavLink>
-      <NavLink to='/alumni' transparentNav={transparentNav} sideNav={sideNav}>Alumni</NavLink>
+      <NavLink to='/oldblues' transparentNav={transparentNav} sideNav={sideNav}>Old Blues</NavLink>
       <NavLink to='/documents' transparentNav={transparentNav} sideNav={sideNav}>Documents</NavLink>
     </>
   )

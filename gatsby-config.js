@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Cambridge University Fencing Club`,
+    siteUrl: `https://www.cufencing.org.uk`,
+    description: `Cambridge University Fencing Club`,
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     {

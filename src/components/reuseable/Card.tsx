@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, breaks } from "../../style";
+import { colors } from "../../style";
 
 const Card = styled.div`
   display: flex;
