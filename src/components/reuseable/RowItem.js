@@ -25,7 +25,7 @@ const RowItem = (props) => {
     filled = [basis, basis, basis, basis];
   }
   else if (Array.isArray(props.bases)) {
-    filled = props.bases.map((n: number) => n + "%");
+    filled = props.bases.map((n) => n + "%");
   }
 
   const bases = {'small': filled[0], 'medium': filled[1], 'large': filled[2], 'xLarge': filled[3]};

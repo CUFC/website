@@ -16,7 +16,7 @@ const Logo = () => {
   query {
     file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 50, pngQuality: 80) {
+          fluid(maxHeight: 80, pngQuality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -99,10 +99,10 @@ export default function Navbar () {
   useEffect(() => {
     if (typeof window !== `undefined`) {
       window.addEventListener('scroll', event => {
-        if (window.scrollY == 0 && !atTop) {
+        if (window.scrollY === 0 && !atTop) {
           setAtTop(true);
         }
-        else if (window.scrollY != 0 && atTop) {
+        else if (window.scrollY !== 0 && atTop) {
           setAtTop(false);
         }
       });

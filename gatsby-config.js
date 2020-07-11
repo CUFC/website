@@ -13,6 +13,7 @@ module.exports = {
           `EB Garamond`,
           `Source Sans Pro` 
         ],
+        display: 'swap',
       }
     },
     {

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { breaks, colors, fonts } from "../../style"
+import { colors, fonts } from "../../style"
 import Card from "../reuseable/Card";
 import FlexRow from "../reuseable/FlexRow";
 import RowItem from "../reuseable/RowItem";
@@ -19,7 +19,7 @@ const CommitteeCard = ({ name, role, email }) => {
       <Card width={"100%"} height={"100%"}>
         <p css={`text-align: center; font-family: ${fonts.serif}; font-size: x-large; margin: 10px;`}>{role}</p>
         <p css={`text-align: center; margin: 10px;`}>{name}</p>
-        <a href={'mailto:' + email} css={`width: 20px; margin: 10px;`}><Envelope /></a>
+        <a href={'mailto:' + email} css={`width: 20px; margin: 10px;`} aria-label="email"><Envelope /></a>
       </Card>
     </RowItem>
   )
