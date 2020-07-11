@@ -8,7 +8,7 @@ const NavSkip = styled.div`
   height: 70px`
 
 const HeaderImage = styled(Img)`
-  height: 20vh;
+  height: 300px;
   margin: 0 auto;
   width: 900px;
   @media(max-width: 900px) {
