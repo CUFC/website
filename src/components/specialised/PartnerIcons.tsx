@@ -27,7 +27,7 @@ export default function PartnerIcons() {
         }
       }
     }`);
-    const icons = [query.kappa.childImageSharp.fluid, query.vango.childImageSharp.fluid];
+    const icons = [query.vango.childImageSharp.fluid, query.kappa.childImageSharp.fluid];
   return (
     <FlexRow css={`align-items: center;`}>{icons.map((icon) => <RowItem bases={[50, 50, 50, 50]}>{<Icon fluid={icon} />}</RowItem>)}</FlexRow>
   );

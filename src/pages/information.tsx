@@ -35,8 +35,32 @@ export default function Information({ data }) {
         </RowItem>
         <RowItem bases={[100, 100, 50, 50]}>
           <ul>
-            <li>Monday</li>
-            <li>Tuesday</li>
+            <li>Tuesday:
+              <ul>
+                <li>15:30-17:25: Beginners</li>
+                <li>17:00-18:00: TTR</li>
+              </ul>
+            </li>
+            <li>Thursday:
+              <ul>
+                <li>16:30-18:25: Open</li>
+              </ul>
+            </li>
+            <li>Friday:
+              <ul>
+                <li>16:30-18:25: Beginners</li>
+              </ul>
+            </li>
+            <li>Saturday:
+              <ul>
+                <li>14:00-15:55: Blues</li>
+              </ul>
+            </li>
+            <li>Sunday:
+              <ul>
+                <li>10:30-13:25: Open</li>
+              </ul>
+            </li>
           </ul>
         </RowItem>
       </FlexRow>

@@ -45,9 +45,10 @@ const NavbarContainer = styled.nav`
 const NavLink = (props) => <Button {...props} as={Link}></Button>
 
 const NavList = styled.div`
+  display: none;
   margin: -10px 10px;
-  @media (max-width: ${breaks.medium}) {
-    display: none;
+  @media (min-width: ${breaks.medium}) {
+    display: block;
   }`;
 
 const SideNav = styled.div`
