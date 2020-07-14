@@ -3,6 +3,10 @@ module.exports = {
     title: `Cambridge University Fencing Club`,
     siteUrl: `https://www.cufencing.org.uk`,
     description: `Cambridge University Fencing Club`,
+    titleTemplate: "%s · CUFC",
+    description:
+      "CUFC, the official fencing club of the University of Cambridge, is one of the longest running fencing clubs in the country having been founded in 1896.",
+    image: "cufc_trinity.jpg",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -14,18 +18,6 @@ module.exports = {
           `Source Sans Pro` 
         ],
         display: 'swap',
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Cambridge University Fencing Club`,
-        short_name: `CUFC`,
-        start_url: `/`,
-        background_color: `#2b2a2a`,
-        theme_color: `#a3c1ad`,
-        display: `standalone`,
-        icon: `${__dirname}/src/images/logo.png`
       }
     },
     {
@@ -44,6 +36,8 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    `gatsby-plugin-smoothscroll`
+    `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`
   ]
 }

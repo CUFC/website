@@ -4,7 +4,7 @@ import Page from "../components/specialised/Page"
 
 export default function Documents({ data }) {
   return (
-    <Page image={data.image.childImageSharp.fluid}>
+    <Page image={data.image.childImageSharp.fluid} seo={{title: "Documents"}}>
       <h1>Club Documents</h1>
       <p>Below are all the offical club documents. Feel free to peruse at will.</p>
       <ul>

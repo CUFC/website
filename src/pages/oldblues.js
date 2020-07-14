@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 export default function OldBlues({ data }) {
   return (
-    <Page image={data.file.childImageSharp.fluid}>
+    <Page image={data.file.childImageSharp.fluid} seo={{title: "Old Blues"}}>
       <h1>
         Information for Old Blues
       </h1>

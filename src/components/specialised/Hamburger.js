@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { colors } from "../../style"
-import Button from "../reuseable/Button"
+import Button from "../reusable/Button"
 
 const Bar = styled.div`
   width: 20px;
@@ -25,7 +25,7 @@ const BottomBar = styled(Bar)`
 
 const Hamburger = ( { onClick, open, className } ) => {
   return (
-    <Button onClick={onClick} className={className}>
+    <Button onClick={onClick} className={className} aria-label="menu">
       <TopBar open={open}/>
       <MiddleBar open={open}/>
       <BottomBar open={open}/>

@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import Hamburger from "./Hamburger"
 import { colors, breaks } from "../../style"
-import Button from "../reuseable/Button"
+import Button from "../reusable/Button"
 
 const LogoContainer = styled.div`
   z-index: 2;

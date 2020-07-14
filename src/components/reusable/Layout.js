@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import SEO from "./SEO"
 import Navbar from "../specialised/Navbar"
 import Footer from "../specialised/Footer"
 import { createGlobalStyle } from 'styled-components'
@@ -30,10 +31,11 @@ const MainContent = styled.main`
   width: 100%;
   flex: auto;`;
 
-export default function Layout({ children }) {
+export default function Layout({ children, seo }) {
   return (
     <>
       <GlobalStyle />
+      <SEO {...seo} />
       <OuterContainer>
         <Navbar />
         <MainContent>

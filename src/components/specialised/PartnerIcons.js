@@ -1,8 +1,8 @@
 import React from "react";
-import FlexRow from "../reuseable/FlexRow";
+import FlexRow from "../reusable/FlexRow";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import RowItem from "../reuseable/RowItem";
+import RowItem from "../reusable/RowItem";
 import styled from "styled-components";
 
 const Icon = styled(Img)`

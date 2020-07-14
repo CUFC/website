@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { colors, fonts } from "../../style"
-import Card from "../reuseable/Card";
-import FlexRow from "../reuseable/FlexRow";
-import RowItem from "../reuseable/RowItem";
+import Card from "../reusable/Card";
+import FlexRow from "../reusable/FlexRow";
+import RowItem from "../reusable/RowItem";
 
 const Envelope = () => {
   return (

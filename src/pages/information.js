@@ -2,8 +2,9 @@ import React from "react"
 import Page from "../components/specialised/Page"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import FlexRow from "../components/reuseable/FlexRow"
-import RowItem from "../components/reuseable/RowItem"
+import FlexRow from "../components/reusable/FlexRow"
+import RowItem from "../components/reusable/RowItem"
+import YAMLData from "../data/data.yaml"
 
 const LocationMap = styled.iframe`
   width: 100%;
@@ -13,7 +14,7 @@ const LocationMap = styled.iframe`
 
 export default function Information({ data }) {
   return (
-    <Page image={data.headerImage.childImageSharp.fluid}>
+    <Page image={data.headerImage.childImageSharp.fluid} seo={{title: "Information"}}>
       <h1>
         Club Information
       </h1>
@@ -73,7 +74,7 @@ export default function Information({ data }) {
              Cambridge<br />
              CB3 0AS</p>
         </RowItem>
-        <RowItem bases={[100, 100, 50, 50]}><LocationMap src={"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3__ZYUh32EcRort1wB8MPbc&key="+data.mapEmbedKey.nodes[0].mapEmbedKey}></LocationMap></RowItem>
+        <RowItem bases={[100, 100, 50, 50]}><LocationMap src={"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3__ZYUh32EcRort1wB8MPbc&key="+YAMLData.mapEmbedKey}></LocationMap></RowItem>
       </FlexRow>
       <h2>Events</h2>
       <FlexRow>
@@ -98,11 +99,6 @@ export const query = graphql`
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
-      }
-    }
-    mapEmbedKey: allTextYaml {
-      nodes {
-        mapEmbedKey
       }
     }
   }`

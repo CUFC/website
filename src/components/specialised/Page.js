@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import Layout from "../reuseable/Layout"
-import MainContainer from "../reuseable/MainContainer"
+import Layout from "../reusable/Layout"
+import MainContainer from "../reusable/MainContainer"
 
 const NavSkip = styled.div`
   height: 70px`
@@ -16,9 +16,9 @@ const HeaderImage = styled(Img)`
     width: 100vw;
   }`
 
-export default function Page({ children, image }) {
+export default function Page({ children, image, seo }) {
   return (
-    <Layout>
+    <Layout seo={seo}>
       <NavSkip />
       <HeaderImage fluid={image} />
       <MainContainer>

@@ -112,7 +112,7 @@ export default function Hero() {
         </TitleText>
         <SubtitleText>Est. 1896</SubtitleText>
       </OverlayContainer>
-      <DownArrowContainer onClick={() => {scrollTo('#content')}}>
+      <DownArrowContainer onClick={() => {scrollTo('#content')}} aria-label="scroll to content">
         <DownArrow />
       </DownArrowContainer>
     </HeroImage>
