@@ -36,6 +36,18 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Cambridge University Fencing Club`,
+        short_name: `CUFC`,
+        start_url: `/`,
+        background_color: `#121212`,
+        theme_color: `#a3c1ad`,
+        display: `standalone`,
+        icon: `src/images/logo.png`,
+      },
+    },
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`
