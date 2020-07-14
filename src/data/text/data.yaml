@@ -1,0 +1,9 @@
+committee:
+  - crsid: spqr1
+    name: Example Example
+    role: President
+  - crsid: abc123
+    name: Example Example
+    role: Treasurer
+
+mapEmbedKey: putAKeyHerePlease
