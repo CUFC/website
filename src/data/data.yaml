@@ -1,9 +1,9 @@
 committee:
-  - crsid: spqr1
-    name: Example Example
+  - name: Example Example
     role: President
-  - crsid: abc123
-    name: Example Example
+    email: president@gmail.com
+  - name: Example Example
     role: Treasurer
+    email: tre27@cam.ac.uk
 
 mapEmbedKey: putAKeyHerePlease

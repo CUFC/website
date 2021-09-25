@@ -31,11 +31,11 @@ const CardsContainer = styled(FlexRow)`
   justify-content: space-around;`
 
 const CommitteeCards = ({ data }) => {
-  return (
-    <CardsContainer>
-      {data.map(member => <CommitteeCard name={member.name} role={member.role} email={member.crsid+'@cam.ac.uk'} />)}
-    </CardsContainer>
-  )
+    return (
+      <CardsContainer>
+        {data.map(member => <CommitteeCard name={member.name} role={member.role} email={member.email} />)}
+      </CardsContainer>
+    )
 }
 
 export default CommitteeCards
