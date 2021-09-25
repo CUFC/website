@@ -32,19 +32,19 @@ export default function Information({ data }) {
       <h2>Training Times</h2>
       <FlexRow>
         <RowItem bases={[100, 100, 50, 50]}>
-          <p>We split training into three different types of session: Beginnner, Open, and Blues. The beginner sessions are reserved for beginners following our beginners programme that runs throughout the year. If you have never fenced before, these are the sessions you will go to.  Most members who have fenced before will find themselves attending our Open sessions. Finally, the Blues sessions are special squad training sessions, and attendance is by invitation from team captains only.</p>
+          <p>We split training into three different types of session: Beginner, Experienced/Open, and Blues. The beginner sessions are reserved for beginners following our beginners programme that runs throughout the year. If you have never fenced before, these are the sessions you will go to.  Most members who have fenced before will find themselves attending our Open sessions. Finally, the Blues sessions are special squad training sessions, and attendance is by invitation from team captains only.</p>
         </RowItem>
         <RowItem bases={[100, 100, 50, 50]}>
           <ul>
             <li>Tuesday:
               <ul>
-                <li>15:30-17:25: Beginners</li>
-                <li>17:00-18:00: TTR</li>
+                <li>07:30-08:30: S&C @ TTR</li>
+                <li>15:30-17:30: Beginners</li>
               </ul>
             </li>
             <li>Thursday:
               <ul>
-                <li>16:30-18:25: Open</li>
+                <li>16:00-18:00: Experienced</li>
               </ul>
             </li>
             <li>Friday:
